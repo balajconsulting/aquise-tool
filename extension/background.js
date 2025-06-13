@@ -1,0 +1,1 @@
+// Hintergrundskript für die Extension (Platzhalter) 

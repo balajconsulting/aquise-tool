@@ -1,0 +1,27 @@
+{
+  "name": "akquise-tool-backend",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "scripts": {
+    "dev": "nodemon src/index.js",
+    "start": "node src/index.js"
+  },
+  "dependencies": {
+    "axios": "^1.9.0",
+    "chrome-launcher": "^1.2.0",
+    "cors": "^2.8.5",
+    "lighthouse": "^12.6.0",
+    "proxy-chain": "^2.5.8",
+    "puppeteer": "^24.8.2",
+    "puppeteer-extra": "^3.3.6",
+    "puppeteer-extra-plugin-stealth": "^2.11.2",
+    "socket.io": "^4.8.1",
+    "top-user-agents": "^2.1.51",
+    "wappalyzer": "^7.0.3",
+    "ws": "^8.18.2"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2",
+    "nodemon": "^3.1.10"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "name": "aquise-tool-root",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently \"npm run dev --prefix backend\" \"npm start --prefix frontend\""
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
+    "@fluentui/react": "^8.122.19",
+    "@mui/icons-material": "^7.1.0",
+    "@mui/material": "^7.1.0",
+    "@mui/x-data-grid": "^8.3.1",
+    "bcrypt": "^6.0.0",
+    "cors": "^2.8.5",
+    "express-session": "^1.18.1",
+    "jsonwebtoken": "^9.0.2",
+    "puppeteer-extra": "^3.3.6",
+    "puppeteer-extra-plugin-stealth": "^2.11.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "recharts": "^2.15.3"
+  }
+}
