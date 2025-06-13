@@ -226,3 +226,16 @@ Das System implementiert ein intelligentes Queue-System für die Echtzeitüberwa
 - Automatischer Wechsel zum nächsten Batch nach Abschluss des aktuellen
 - Visuelle Hervorhebung des aktuell bewerteten Leads für bessere Übersicht
 - Score-Farbkodierung: Grün (≥60), Gelb (≥30), Rot (<30) 
+
+
+
+
+mysql
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'akant0350365035300';
+FLUSH PRIVILEGES;
+EXIT;
+
+
+# .env updaten:
+cd /opt/aquise-tool/backend
+sed -i 's/DB_PASSWORD=/DB_PASSWORD=akant0350365035300/g' .env
