@@ -4,7 +4,7 @@
   "version": "0.1.0",
   "description": "Schnelles Swipen und Bewerten von Leads aus dem Aquise-Tool.",
   "permissions": ["storage", "activeTab", "scripting"],
-  "host_permissions": ["http://localhost:5000/*"],
+  "host_permissions": ["https://aquise.balaj.consulting/*"],
   "background": {
     "service_worker": "background.js"
   },

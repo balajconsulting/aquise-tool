@@ -2,6 +2,9 @@
 
 console.log('Aquise Swipe Content-Skript geladen');
 
+// Basis-URL für API-Aufrufe
+const API_BASE_URL = 'https://aquise.balaj.consulting';
+
 let swipeModeActive = false;
 let currentLead = null;
 let overlay = null;
@@ -148,7 +151,7 @@ chrome.storage.local.get('aquiseRemainingLeads', (data) => {
 async function fetchNextLeadAndGoto() {
   debugLog('fetchNextLeadAndGoto gestartet');
   try {
-    const countRes = await fetch('http://localhost:5000/api/leads/count/swipeable');
+    const countRes = await fetch(`${API_BASE_URL}/api/leads/count/swipeable`);
     let countData = await countRes.json();
     debugLog('Leads count Response', countData);
     if (typeof countData.count === 'number') {
@@ -160,7 +163,7 @@ async function fetchNextLeadAndGoto() {
     }
     createOverlay();
     updateOverlay(currentLead);
-    const res = await fetch('http://localhost:5000/api/leads/next');
+    const res = await fetch(`${API_BASE_URL}/api/leads/next`);
     debugLog('Leads next Response', res);
     if (!res.ok) throw new Error('Keine Leads');
     const lead = await res.json();
@@ -228,7 +231,7 @@ async function swipe(direction) {
   if (direction === 'left') manual_status = 'MGR';
   animateSwipe(direction, async () => {
     try {
-      await fetch(`http://localhost:5000/api/leads/${currentLead.id}`, {
+      await fetch(`${API_BASE_URL}/api/leads/${currentLead.id}`, {
         method: 'PATCH',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ manual_status })
